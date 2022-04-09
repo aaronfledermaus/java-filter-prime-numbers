@@ -25,9 +25,7 @@ public class Challenge {
         boolean flag;
         for (int i = start; i <= end; i++) {
             flag = true;
-            if (i == 1) {
-                continue;
-            }
+            if (i == 1) continue;
             for (int j = 2; j <= (int) Math.sqrt(i); j++) {
                 if (i % j == 0) {
                     flag = false;
