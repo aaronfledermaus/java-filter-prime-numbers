@@ -22,8 +22,12 @@ public class Challenge {
     public static int[] filterPrimeNumbers(int start, int end) {
         int[] arr = new int[end - start + 1];
         int index = 0;
+        boolean flag;
         for (int i = start; i <= end; i++) {
-            boolean flag = true;
+            flag = true;
+            if (i == 1) {
+                continue;
+            }
             int num = (int) Math.sqrt(i);
             for (int j = 2; j <= num; j++) {
                 if (i % j == 0) {
@@ -31,7 +35,7 @@ public class Challenge {
                     break;
                 }
             }
-            if (flag == true && i != 1) {
+            if (flag == true) {
                 arr[index++] = i;
             }
 
