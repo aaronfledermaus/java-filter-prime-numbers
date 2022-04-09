@@ -28,8 +28,7 @@ public class Challenge {
             if (i == 1) {
                 continue;
             }
-            int num = (int) Math.sqrt(i);
-            for (int j = 2; j <= num; j++) {
+            for (int j = 2; j <= (int) Math.sqrt(i); j++) {
                 if (i % j == 0) {
                     flag = false;
                     break;
@@ -38,9 +37,7 @@ public class Challenge {
             if (flag == true) {
                 arr[index++] = i;
             }
-
         }
-
         int[] arrCpy = new int[index];
         for (int i = 0; i < index; i++) {
             arrCpy[i] = arr[i];
