@@ -32,14 +32,12 @@ public class Challenge {
                     break;
                 }
             }
-            if (flag == true) {
+            if (flag) {
                 arr[index++] = i;
             }
         }
         int[] arrCpy = new int[index];
-        for (int i = 0; i < index; i++) {
-            arrCpy[i] = arr[i];
-        }
+        System.arraycopy(arr, 0, arrCpy, 0, index);
         return arrCpy;
     }
 }
