@@ -20,7 +20,7 @@ public class Challenge {
      * and `Math.sqrt(n)`, then `n` is a prime number.
      */
     public static int[] filterPrimeNumbers(int start, int end) {
-        if (end < start || start < 0 || end < 0) {
+        if (start < 1 || end < 1) {
             return new int[0];
         }
 
