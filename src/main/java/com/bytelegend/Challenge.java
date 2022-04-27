@@ -1,7 +1,6 @@
 package com.bytelegend;
 
 import java.util.Arrays;
-import java.util.stream.IntStream;
 
 public class Challenge {
     public static void main(String[] args) {
@@ -21,12 +20,6 @@ public class Challenge {
      * and `Math.sqrt(n)`, then `n` is a prime number.
      */
     public static int[] filterPrimeNumbers(int start, int end) {
-        return IntStream.range(start, end+1)
-                .filter(n -> n >= 2 && IntStream.range(2, (int) Math.sqrt(n)+1)
-                        .filter(i -> n % i == 0)
-                        .parallel()
-                        .findAny()
-                        .isEmpty())
-                .toArray();
+        return null;
     }
 }
