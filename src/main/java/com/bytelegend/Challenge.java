@@ -24,7 +24,7 @@ public class Challenge {
         int z = 0;
         for (int i = start; i <= end; i++) {
             int y = 0;
-            if (i == 1) {
+            if (i == 1 || i == 0) {
                 continue;
             }
             for (int j = 2; j <= Math.sqrt(i); j++) {
