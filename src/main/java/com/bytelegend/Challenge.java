@@ -24,9 +24,9 @@ public class Challenge {
     public static int[] filterPrimeNumbers(int start, int end) {
         if (start >= end) return null;
         List<Integer> result = new ArrayList<>();
-        result.add(2);
+        if (start <= 1) start++;
         OUT:
-        for (int i = 3; i < end; i += 2) {
+        for (int i = start; i < end; i++) {
             for (int j = 2; j < i; j++) {
                 if (i % j == 0) {
                     continue OUT;
