@@ -1,6 +1,8 @@
 package com.bytelegend;
 
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 public class Challenge {
     public static void main(String[] args) {
@@ -20,6 +22,18 @@ public class Challenge {
      * and `Math.sqrt(n)`, then `n` is a prime number.
      */
     public static int[] filterPrimeNumbers(int start, int end) {
-        return null;
+        if (start >= end) return null;
+        List<Integer> result = new ArrayList<>();
+        result.add(2);
+        OUT:
+        for (int i = 3; i < end; i += 2) {
+            for (int j = 2; j < i; j++) {
+                if (i % j == 0) {
+                    continue OUT;
+                }
+            }
+            result.add(i);
+        }
+        return result.stream().mapToInt(Integer::intValue).toArray();
     }
 }
