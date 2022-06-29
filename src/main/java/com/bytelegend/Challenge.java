@@ -8,6 +8,7 @@ public class Challenge {
     public static void main(String[] args) {
         System.out.println(Arrays.toString(filterPrimeNumbers(1, 10)));
         System.out.println(Arrays.toString(filterPrimeNumbers(50, 100)));
+
     }
 
     /**
@@ -24,7 +25,10 @@ public class Challenge {
     public static int[] filterPrimeNumbers(int start, int end) {
         if (start >= end) return null;
         List<Integer> result = new ArrayList<>();
-        if (start <= 1) start++;
+        if (start <= 1) {
+            if (start == 0) start += 2;
+            if (start == 1) start++;
+        }
         OUT:
         for (int i = start; i < end; i++) {
             for (int j = 2; j < i; j++) {
