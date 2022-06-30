@@ -25,19 +25,20 @@ public class Challenge {
     public static int[] filterPrimeNumbers(int start, int end) {
         if (start >= end) return null;
         List<Integer> result = new ArrayList<>();
-        if (start <= 1) {
-            if (start == 0) start += 2;
-            if (start == 1) start++;
-        }
-        OUT:
-        for (int i = start; i < end; i++) {
-            for (int j = 2; j < i; j++) {
-                if (i % j == 0) {
-                    continue OUT;
-                }
-            }
-            result.add(i);
+        for (int i = start; i <= end; i++) {
+            if (isPrime(i))
+                result.add(i);
         }
         return result.stream().mapToInt(Integer::intValue).toArray();
+    }
+
+    public static boolean isPrime(int num) {
+        if (num <= 1) return false;
+        for (int j = 2; j <= (int) Math.sqrt(num); j++) {
+            if (num % j == 0) {
+                return false;
+            }
+        }
+        return true;
     }
 }
