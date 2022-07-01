@@ -30,7 +30,7 @@ public class Challenge {
         int[] array = new int[counter];
         counter = 0;
         startCounter = start;
-        while (start - 1 < end) {
+        while (startCounter - 1 < end) {
             array[counter] = startCounter;
             startCounter++;
             counter++;
