@@ -27,7 +27,7 @@ public class Challenge {
             for (int j = 2; j <= Math.sqrt(i); j++) {
                 if (i % j == 0) {
                     isFlag = false;
-                    break;//优化2，对非质数。在遍历是否整除过程中，只要出现整除的，立马终止循环，不除后续的数。
+                    break;
                 }
             }
             if (isFlag == true) {
