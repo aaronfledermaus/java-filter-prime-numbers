@@ -23,6 +23,9 @@ public class Challenge {
         List<Integer> list = new ArrayList<Integer>();
         boolean isFlag = true;
         for (int i = 2; i <= end; i++) {
+            if (i < 2) {
+                continue;
+            }
             isFlag = true;
             for (int j = 2; j <= Math.sqrt(i); j++) {
                 if (i % j == 0) {
