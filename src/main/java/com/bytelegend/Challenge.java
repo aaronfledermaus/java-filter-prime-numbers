@@ -21,11 +21,8 @@ public class Challenge {
      */
     public static int[] filterPrimeNumbers(int start, int end) {
         List<Integer> list = new ArrayList<Integer>();
-        if (start < 2) {
-            start = 2;
-        }
         boolean isFlag = true;
-        for (int i = start; i <= end; i++) {
+        for (int i = 2; i <= end; i++) {
             isFlag = true;
             for (int j = 2; j <= Math.sqrt(i); j++) {
                 if (i % j == 0) {
