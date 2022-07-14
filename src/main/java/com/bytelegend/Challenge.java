@@ -23,7 +23,7 @@ public class Challenge {
     public static int[] filterPrimeNumbers(int start, int end) {
                 ArrayList<Integer> answer = new ArrayList<>();
         boolean flag = true;
-        for (int i = start; i < end; i++) {
+        for (int i = start; i <= end; i++) {
             if (i <= 1) {
                 continue;
             }
