@@ -35,4 +35,5 @@ public class Challenge {
             }
         }
         return a;
+    }
 }
