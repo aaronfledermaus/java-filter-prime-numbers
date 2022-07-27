@@ -27,17 +27,17 @@ public class Challenge {
                 answer[k++] = i;
             }
         }
-        int[] Lastanswer = new int[k];
+        int[] lastAnswer = new int[k];
         for (int j = 0; j < k; ++j) {
-            Lastanswer[j] = answer[j];
+            lastAnswer[j] = answer[j];
         }
-        return Lastanswer;
+        return lastAnswer;
     }
     public static boolean isPrime(int n) {
         if (n < 2) {
             return false;
         }
-        for (int i = 2; i < Math.sqrt(n); ++i) {
+        for (int i = 2; i <= Math.sqrt(n); ++i) {
             if(n % i == 0) {
                 return false;
             }
