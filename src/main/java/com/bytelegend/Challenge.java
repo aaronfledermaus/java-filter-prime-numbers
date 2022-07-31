@@ -27,13 +27,13 @@ public class Challenge {
             }
         }
         int n = 0;
-        for (int i = start; i <= end; i++) {
+        for (int i = Math.max(start, 2); i <= end; i++) {
             if (!visited[i]) {
                 n++;
             }
         }
         int[] ans = new int[n];
-        for (int i = start, idx = 0; i <= end && idx < n; i++) {
+        for (int i = Math.max(start, 2), idx = 0; i <= end && idx < n; i++) {
             if (!visited[i]) {
                 ans[idx++] = i;
             }
