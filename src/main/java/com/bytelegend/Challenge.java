@@ -21,7 +21,7 @@ public class Challenge {
      * and `Math.sqrt(n)`, then `n` is a prime number.
      */
     public static int[] filterPrimeNumbers(int start, int end) {
-        ArrayList<Integer> prime =new ArrayList<>();
+        List<Integer> prime =new ArrayList<>();
 
         for (int i = start; i <= end; i++) {
             if(isprime(i)){
