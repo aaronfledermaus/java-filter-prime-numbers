@@ -20,12 +20,19 @@ public class Challenge {
      * <p>Tips: for a positive integer `n`, if it's not divisible by any of the integers between 2
      * and `Math.sqrt(n)`, then `n` is a prime number.
      */
-    public static String filterPrimeNumbers(int start, int end) {
-        StringJoiner pn= new StringJoiner(",","[","]");
+    public static int[] filterPrimeNumbers(int start, int end) {
+        ArrayList<Integer> prime =new ArrayList<>();
+
         for (int i = start; i <= end; i++) {
-            if(isprime(i)) pn.add(i+"");
+            if(isprime(i)){
+                prime.add(i);
+            }
         }
-        return pn.toString();
+        int[] p=new int[prime.size()];
+        for (int i = 0; i < prime.size(); i++) {
+            p[i]= prime.get(i);
+        }
+        return p;
     }
 
     public static boolean isprime(int n){
