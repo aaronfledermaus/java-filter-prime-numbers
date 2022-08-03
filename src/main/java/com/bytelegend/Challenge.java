@@ -1,12 +1,11 @@
 package com.bytelegend;
 
 import java.util.Arrays;
-import java.util.StringJoiner;
 
 public class Challenge {
     public static void main(String[] args) {
-        System.out.println(filterPrimeNumbers(1, 10));
-        System.out.println(filterPrimeNumbers(50, 100));
+        System.out.println(Arrays.toString(filterPrimeNumbers(1, 10)));
+        System.out.println(Arrays.toString(filterPrimeNumbers(50, 100)));
     }
 
     /**
@@ -21,25 +20,34 @@ public class Challenge {
      * and `Math.sqrt(n)`, then `n` is a prime number.
      */
     public static int[] filterPrimeNumbers(int start, int end) {
-        List<Integer> prime =new ArrayList<>();
-
+        String res = "";
+        boolean isFlag = true;
         for (int i = start; i <= end; i++) {
-            if(isprime(i)){
-                prime.add(i);
+            if (i < 2) {
+                continue;
+            }
+            isFlag = true;
+            for (int j = 2; j <= Math.sqrt(i); j++) {
+                if (i % j == 0) {
+                    isFlag = false;
+                    break;
+                }
+            }
+            if (isFlag == true) {
+                res += i + ",";
             }
         }
-        int[] p=new int[prime.size()];
-        for (int i = 0; i < prime.size(); i++) {
-            p[i]= prime.get(i);
-        }
-        return p;
-    }
+        String[] str = res.split(",");
+        int[] ires = new int[str.length];
+        if (str.length == 1 && "".equals(str[0])) {
+            ires = new int[0];
+        } else {
+            for (int i = 0; i < str.length; i++) {
+                ires[i] = Integer.parseInt(str[i]);
 
-    public static boolean isprime(int n){
-        if(n<2)return false;
-        for (int i = 2; i <= Math.sqrt(n); i++) {
-            if(n%i==0) return false;
+            }
         }
-        return true;
+
+        return ires;
     }
 }
