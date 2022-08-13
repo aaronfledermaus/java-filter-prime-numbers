@@ -24,7 +24,7 @@ public class Challenge {
 
         int start01 = start;
 
-        while(start01 <= 1) {
+        while (start01 <= 1) {
             start01 += 1;
         }
 
