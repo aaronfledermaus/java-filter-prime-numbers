@@ -22,33 +22,32 @@ public class Challenge {
     public static int[] filterPrimeNumbers(int start, int end) {
         List<Integer> list = new ArrayList<>();
 
-        int start01 = start;
+        int start01 = 2;
+        boolean b = true;
 
-        while (start01 <= 1) {
-            start01 += 1;
+        if(start > 2) {
+            start01 = start;
         }
 
         for (int i = start01; i <= end; i++) {
-            long n = 0;
-            long m = Math.round(Math.sqrt(i)) + 1;
-            for (long l = 2; l <= m; l++) {
-                n = l;
-                if (i % l == 0) {
+            for (int j = 2; j <= Math.round(Math.sqrt(i)); j++) {
+                if (i % j == 0) {
+                    b = false;
                     break;
-                } else {
+                }else {
                     continue;
                 }
             }
-            if (n == m) {
+            if (b == true) {
                 list.add(i);
             }
+            b = true;
         }
+
         int[] ints = new int[list.size()];
         for (int i = 0; i < list.size(); i++) {
             ints[i] = list.get(i);
         }
-
-
         return ints;
     }
 }
