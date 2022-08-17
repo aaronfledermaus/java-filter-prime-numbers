@@ -25,7 +25,7 @@ public class Challenge {
         int start01 = 2;
         boolean b = true;
 
-        if(start > 2) {
+        if (start > 2) {
             start01 = start;
         }
 
@@ -34,7 +34,7 @@ public class Challenge {
                 if (i % j == 0) {
                     b = false;
                     break;
-                }else {
+                } else {
                     continue;
                 }
             }
