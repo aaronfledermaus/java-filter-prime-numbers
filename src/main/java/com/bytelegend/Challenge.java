@@ -23,7 +23,7 @@ public class Challenge {
     public static int[] filterPrimeNumbers(int start, int end) {
         int i = start < 2 ? 2 : start;
         Stack<Integer> t = new Stack<>();
-        for (t; i <= end; i++) {
+        for (; i <= end; i++) {
             boolean flag = true;
             for (int j = 2; j <= Math.sqrt(i); j++) {
                 if (i % j == 0) {
