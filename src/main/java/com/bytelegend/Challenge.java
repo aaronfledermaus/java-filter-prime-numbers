@@ -1,6 +1,7 @@
 package com.bytelegend;
 
 import java.util.Arrays;
+import java.util.Stack;
 
 public class Challenge {
     public static void main(String[] args) {
@@ -20,11 +21,9 @@ public class Challenge {
      * and `Math.sqrt(n)`, then `n` is a prime number.
      */
     public static int[] filterPrimeNumbers(int start, int end) {
-        if (start < 2) {
-            start = 2;
-        }
+        int i = start < 2 ? 2 : start;
         Stack<Integer> t = new Stack<>();
-        for (int i = start; i <= end; i++) {
+        for (t; i <= end; i++) {
             boolean flag = true;
             for (int j = 2; j <= Math.sqrt(i); j++) {
                 if (i % j == 0) {
