@@ -40,7 +40,7 @@ public class Challenge {
             }
         }
         int[] retValue = new int[t.size()];
-        for (int i = t.size() - 1; !t.empty(); i--) {
+        for (i = t.size() - 1; !t.empty(); i--) {
             retValue[i] = t.pop();
         }
         return retValue;
