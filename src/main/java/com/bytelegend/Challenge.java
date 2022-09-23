@@ -20,6 +20,27 @@ public class Challenge {
      * and `Math.sqrt(n)`, then `n` is a prime number.
      */
     public static int[] filterPrimeNumbers(int start, int end) {
-        return null;
+        List<Integer> primes = new ArrayList<>();
+        for (int i = start; i <= end; i++) {
+            if (isPrime(i)) {
+                primes.add(i);
+            }
+        }
+        return primes.stream().mapToInt(Integer::valueOf).toArray();
+    }
+
+    static boolean isPrime(int num) {
+        if (num < 2) {
+            return false;
+        } else if (num == 2) {
+            return true;
+        } else {
+            for (int i = 2; i < Math.sqrt(num) + 1; i++) {
+                if (num % i == 0) {
+                    return false;
+                }
+            }
+        }
+        return true;
     }
 }
