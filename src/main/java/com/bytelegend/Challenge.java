@@ -30,10 +30,8 @@ public class Challenge {
                 result.add(i);
             }
         }
-
-        int[] res = result.stream().mapToInt(Integer::intValue).toArray();
-
-        return res;
+        
+        return result.stream().mapToInt(Integer::intValue).toArray();
     }
 
     public static boolean isPrimeNumber(int num) {
