@@ -19,21 +19,21 @@ public class Challenge {
      * <p>Tips: for a positive integer `n`, if it's not divisible by any of the integers between 2
      * and `Math.sqrt(n)`, then `n` is a prime number.
      */
-        public static int[] filterPrimeNumbers(int start, int end) {
+    public static int[] filterPrimeNumbers(int start, int end) {
         if (start > end) {
             return null;
         }
-        int[] result = new int[0];
-        int j = 0;
+        List<Integer> result = new ArrayList<>();
 
         for (int i = start; i <= end; i++) {
             if (isPrimeNumber(i)) {
-                result[j] = i;
-                j++;
+                result.add(i);
             }
         }
 
-        return result;
+        int[] res = result.stream().mapToInt(Integer::intValue).toArray();
+
+        return res;
     }
 
     public static boolean isPrimeNumber(int num) {
@@ -42,7 +42,7 @@ public class Challenge {
         }
 
         for (int i = 2; i <= Math.sqrt(num); i++) {
-            if (num % i != 0) {
+            if (num % i == 0 && i != num) {
                 return false;
             }
         }
