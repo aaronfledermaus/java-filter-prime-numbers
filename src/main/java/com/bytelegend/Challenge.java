@@ -20,39 +20,6 @@ public class Challenge {
      * and `Math.sqrt(n)`, then `n` is a prime number.
      */
     public static int[] filterPrimeNumbers(int start, int end) {
-        if (start > end) {
-            return null;
-        }
-        int[] res = new int[end - start];
-        int size = 0, j = 0;
-
-        for (int i = start; i <= end; i++) {
-            if (isPrimeNumber(i)) {
-                res[j] = i;
-                size++;
-                j++;
-            }
-        }
-
-        int[] result = new int[size];
-        for (int i = 0; i < size; i++) {
-            result[i] = res[i];
-        }
-
-        return result;
-    }
-
-    public static boolean isPrimeNumber(int num) {
-        if (num < 2) {
-            return false;
-        }
-
-        for (int i = 2; i <= Math.sqrt(num); i++) {
-            if (num % i == 0 && i != num) {
-                return false;
-            }
-        }
-
-        return true;
+        return null;
     }
 }
