@@ -23,15 +23,23 @@ public class Challenge {
         if (start > end) {
             return null;
         }
-        List<Integer> result = new ArrayList<>();
+        int[] res = new int[end - start];
+        int size = 0, j = 0;
 
         for (int i = start; i <= end; i++) {
             if (isPrimeNumber(i)) {
-                result.add(i);
+                res[j] = i;
+                size++;
+                j++;
             }
         }
-        
-        return result.stream().mapToInt(Integer::intValue).toArray();
+
+        int[] result = new int[size];
+        for (int i = 0; i < size; i++) {
+            result[i] = res[i];
+        }
+
+        return result;
     }
 
     public static boolean isPrimeNumber(int num) {
