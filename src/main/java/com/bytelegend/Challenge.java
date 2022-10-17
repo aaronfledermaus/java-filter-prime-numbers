@@ -19,7 +19,34 @@ public class Challenge {
      * <p>Tips: for a positive integer `n`, if it's not divisible by any of the integers between 2
      * and `Math.sqrt(n)`, then `n` is a prime number.
      */
-    public static int[] filterPrimeNumbers(int start, int end) {
-        return null;
+        public static int[] filterPrimeNumbers(int start, int end) {
+        if (start > end) {
+            return null;
+        }
+        int[] result = new int[0];
+        int j = 0;
+
+        for (int i = start; i <= end; i++) {
+            if (isPrimeNumber(i)) {
+                result[j] = i;
+                j++;
+            }
+        }
+
+        return result;
+    }
+
+    public static boolean isPrimeNumber(int num) {
+        if (num < 2) {
+            return false;
+        }
+
+        for (int i = 2; i <= Math.sqrt(num); i++) {
+            if (num % i != 0) {
+                return false;
+            }
+        }
+
+        return true;
     }
 }
