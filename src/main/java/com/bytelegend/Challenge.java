@@ -24,7 +24,7 @@ public class Challenge {
     public static int[] filterPrimeNumbers(int start, int end) {
         List<Integer> list = new ArrayList<>();
         for (int i = start; i <= end; i++) {
-            if (i == 1) {
+            if (i < 2) {
                 continue;
             }
             if (i == 2) {
@@ -33,10 +33,6 @@ public class Challenge {
             }
             int begin = 2;
             int finish = (int) Math.sqrt(i);
-            if (finish < 2) {
-                list.add(i);
-                continue;
-            }
             boolean isPrime = true;
             while (begin <= finish) {
                 if (i % begin == 0) {
