@@ -23,7 +23,7 @@ public class Challenge {
      */
    public static int[] filterPrimeNumbers(int start, int end) {
         if (end < 2)
-            return null;
+            return new int[0];
         else if (end == 2)
             return new int[]{2};
         else {
