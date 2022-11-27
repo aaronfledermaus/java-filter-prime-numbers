@@ -36,7 +36,7 @@ public class Challenge {
                 }
                 result.add(x);
             }
-            return result.stream().mapToInt(x -> x).toArray();
+            return result.stream().mapToInt(x -> x).toArray(); 
         }
     }
 }
