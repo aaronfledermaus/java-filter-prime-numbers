@@ -1,10 +1,12 @@
 package com.bytelegend;
 
+import java.math.BigInteger;
+import java.util.ArrayList;
 import java.util.Arrays;
 
 public class Challenge {
     public static void main(String[] args) {
-        System.out.println(Arrays.toString(filterPrimeNumbers(1, 10)));
+        System.out.println(Arrays.toString(filterPrimeNumbers(10, 10)));
         System.out.println(Arrays.toString(filterPrimeNumbers(50, 100)));
     }
 
@@ -20,6 +22,42 @@ public class Challenge {
      * and `Math.sqrt(n)`, then `n` is a prime number.
      */
     public static int[] filterPrimeNumbers(int start, int end) {
-        return null;
+        ArrayList<Integer> list = new ArrayList<>();
+
+        int index = 0;
+        while (end >= start) {
+            if(!isPrime(start)) {
+                start++;
+                continue;
+            }
+            list.add(start);
+            start++;
+        }
+        int len = list.size();
+        int[] nums = new int[len];
+        for (int i = 0; i < list.size(); i++) {
+            nums[i] = list.get(i);
+        }
+        return nums;
+
+    }
+    public static boolean isPrime(int a) {
+
+        boolean flag = true;
+
+        if (a < 2) {// 素数不小于2
+            return false;
+        } else {
+
+            for (int i = 2; i <= Math.sqrt(a); i++) {
+
+                if (a % i == 0) {// 若能被整除，则说明不是素数，返回false
+
+                    flag = false;
+                    break;// 跳出循环
+                }
+            }
+        }
+        return flag;
     }
 }
