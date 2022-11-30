@@ -26,7 +26,7 @@ public class Challenge {
 
         int index = 0;
         while (end >= start) {
-            if(isPrime(start)) {
+            if(!isPrime(start)) {
                 start++;
                 continue;
             }
