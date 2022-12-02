@@ -28,7 +28,7 @@ public class Challenge {
             }
         }
 
-        if (!"".equals(str) {
+        if (!str.equals("")) {
             String[] split = str.split(",");
             int[] ints = Arrays.asList(split).stream().mapToInt(Integer::parseInt).toArray();
             return  ints;
