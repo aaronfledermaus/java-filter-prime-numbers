@@ -21,21 +21,21 @@ public class Challenge {
      */
     public static int[] filterPrimeNumbers(int start, int end) {
         int j = start;
-        List<Object> list =new ArrayList<Object>();
-        for (int i = 0; i <= end - j; i++,start++) {
-            if (isPrime(start)){
+        List<Object> list = new ArrayList<Object>();
+        for (int i = 0; i <= end - start; i++, j++) {
+            if (isPrime(start)) {
                 list.add(start);
             }
         }
 
         int[] ints =new int[list.size()];
-        for(int i = 0;i < list.size(); i++){
+        for (int i = 0;i < list.size(); i++) {
             ints[i] = (int) list.get(i);
         }
-        return  ints;
+        return ints;
     }
     
-    public static boolean isPrime(int n){
+    public static boolean isPrime(int n) {
         if(n == 1 || n == 0) {
             return false;
         }
