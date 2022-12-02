@@ -28,7 +28,7 @@ public class Challenge {
             }
         }
 
-        int[] ints =new int[list.size()];
+        int[] ints = new int[list.size()];
         for (int i = 0;i < list.size(); i++) {
             ints[i] = (int) list.get(i);
         }
@@ -36,13 +36,14 @@ public class Challenge {
     }
     
     public static boolean isPrime(int n) {
-        if(n == 1 || n == 0) {
+        if (n == 1 || n == 0) {
             return false;
         }
 
         for(int i = 2; i <= Math.sqrt(n); i++){
-            if(n % i == 0)
+            if (n % i == 0) {
                 return false;
+            }
         }
         return true;
     }
