@@ -21,29 +21,30 @@ public class Challenge {
      */
     public static int[] filterPrimeNumbers(int start, int end) {
         int j = start;
-        List<Object> list = new ArrayList<Object>();
+        String str = "";
         for (int i = 0; i <= end - start; i++, j++) {
-            if (isPrime(start)) {
-                list.add(start);
+            if (isPrime(j)){
+                str += j + ",";
             }
         }
 
-        int[] ints = new int[list.size()];
-        for (int i = 0;i < list.size(); i++) {
-            ints[i] = (int) list.get(i);
+        if(str != ""){
+            String[] split = str.split(",");
+            int[] ints = Arrays.asList(split).stream().mapToInt(Integer::parseInt).toArray();
+            return  ints;
+        }else {
+            return new int[0];
         }
-        return ints;
     }
-    
-    public static boolean isPrime(int n) {
-        if (n == 1 || n == 0) {
+
+    public static boolean isPrime(int n){
+        if(n == 1 || n == 0) {
             return false;
         }
 
         for(int i = 2; i <= Math.sqrt(n); i++){
-            if (n % i == 0) {
+            if(n % i == 0)
                 return false;
-            }
         }
         return true;
     }
