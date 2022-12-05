@@ -24,12 +24,12 @@ public class Challenge {
         String str = "";
         for (int i = 0; i <= end - start; i++, j++) {
             if (isPrime(j)) {
-                str += j + "";
+                str+= j + ",";
             }
         }
 
         if (!"".equals(str)) {
-            String[] split = str.split("");
+            String[] split = str.split(",");
             int[] ints = Arrays.asList(split).stream().mapToInt(Integer::parseInt).toArray();
             return  ints;
         } else {
