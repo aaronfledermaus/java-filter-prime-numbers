@@ -3,7 +3,7 @@ package com.bytelegend;
 import java.util.Arrays;
 import java.util.ArrayList;
 
-public class Chanllenge {
+public class Challenge {
     public static void main(String[] args) {
         System.out.println(Arrays.toString(filterPrimeNumbers(1, 10)));
         System.out.println(Arrays.toString(filterPrimeNumbers(50, 100)));
